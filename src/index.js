@@ -2,20 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
 import Home from './routes/Home';
+import ListPage from './routes/ListPage';
 import ProductDetail from './routes/ProductDetail';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import { Router, Route, browserHistory } from 'react-router'
 
 ReactDOM.render(
+
     <Router history={browserHistory}>
         <Route path='/' component={Home} />
-        <Route path='search' component={Home} />
-        <Route excact path='item' component={Home} />
-        <Route path='item/:itemid' component={ProductDetail} />
+        <Route path='items' component={ListPage} />
+        <Route path='items/:itemid' component={ProductDetail} />
     </Router>,
     document.getElementById('root'));
 registerServiceWorker();
 
 //        <Route path='item/:id' component={ProductDetail} />
 //        <Route path='item/:itemid' component={() => <ProductDetail myProp={"dsa"}/>} />
+//<Route excact path='item' component={Home} />

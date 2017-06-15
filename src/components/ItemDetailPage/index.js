@@ -10,22 +10,23 @@ class ItemDetailPage extends React.Component {
     };
 
     constructor(props) {
-
+        debugger;
         super(props);
 
         if (props.selectedItemId.length > 0) {
 
-            this.handleItemSearch(props.selectedItemId);
+            this.getItemDetails(props.selectedItemId);
         }
     }
 
-    componentWillReceiveProps(props) {
+/*    componentWillReceiveProps(props) {
+        debugger;
         if (props.selectedItemId.length > 0) {
-            this.handleItemSearch(props.selectedItemId);
+            this.getItemDetails(props.selectedItemId);
         }
     }
-
-    handleItemSearch = (itemid) => {
+*/
+    getItemDetails= (itemid) => {
 
         ItemDetailClient.search(itemid, (resp) => {
             this.setState({

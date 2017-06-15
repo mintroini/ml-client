@@ -4,45 +4,36 @@
 import React, {Component} from 'react';
 
 
-import SearchList from '../components/SearchList';
-import ItemDetailPage from '../components/ItemDetailPage';
 import SearchBox from '../components/SearchBox';
+import { browserHistory } from 'react-router';
 import '../App.scss';
 
 class Home extends Component {
     state = {
         items: [],
         selectedItemId: [],
-        searchQuery:""
+        searchQuery: ""
     };
 
-
-
-    goToPDP = (item) => {
-        this.setState({selectedItemId: item});
-    };
 
     showSearch = (query) => {
+
         this.setState({searchQuery: query});
+        browserHistory.push('/items?search=' + query);
+
     };
 
     render() {
-        const { selectedItemId, searchQuery} = this.state;
+
 
         return (
             <div className='App'>
-                <h1>Home</h1>
                 <SearchBox
                     onQueryChange={this.showSearch}
                 />
+                <h1>Home</h1>
 
-                <SearchList
-                    searchQuery={searchQuery}
-                    onItemClick={this.goToPDP}
-                />
-                <ItemDetailPage
-                    selectedItemId={selectedItemId}
-                />
+
             </div>
         );
     }

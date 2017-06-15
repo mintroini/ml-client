@@ -6,19 +6,25 @@ class ItemSearch extends React.Component {
         author: {},
         items: [],
         categories: [],
-        searchValue: '',
+
     };
-    componentWillReceiveProps(props){
+
+    constructor(props) {
+        super(props);
         if (props.searchQuery && props.searchQuery.length > 0) {
-            this.handleSearchChange(props.searchQuery);
+
+            this.searchItems(props.searchQuery);
         }
     }
 
-    handleSearchChange = (value) => {
-        this.setState({
-            searchValue: value,
-        });
 
+    componentWillReceiveProps(props) {
+        if (props.searchQuery && props.searchQuery.length > 0) {
+            this.searchItems(props.searchQuery);
+        }
+    }
+
+    searchItems = (value) => {
         if (value === '') {
             this.setState({
                 author: {},
@@ -36,14 +42,6 @@ class ItemSearch extends React.Component {
         }
     };
 
-    handleSearchCancel = () => {
-        this.setState({
-            author: {},
-            categories: [],
-            items: [],
-            searchValue: '',
-        });
-    };
 
     render() {
         const {items} = this.state;
