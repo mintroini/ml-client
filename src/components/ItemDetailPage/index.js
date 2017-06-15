@@ -1,5 +1,8 @@
 import React from 'react';
 import ItemDetailClient from './ItemDetailClient';
+import DescriptionBox from '../DescriptionBox';
+import PriceBox from '../PriceBox';
+
 
 
 class ItemDetailPage extends React.Component {
@@ -10,7 +13,7 @@ class ItemDetailPage extends React.Component {
     };
 
     constructor(props) {
-        debugger;
+
         super(props);
 
         if (props.selectedItemId.length > 0) {
@@ -47,14 +50,19 @@ class ItemDetailPage extends React.Component {
                     <h1>{item.title}</h1>
 
                     <p>{item.condition}</p>
-                    <p>{item.description}</p>
+
                     <p>{item.free_shipping}</p>
                     <p>{item.id}</p>
-                    <p>{item.price.currency}</p>
-                    <p>{item.price.amount}</p>
-                    <p>{item.price.decimals}</p>
+
                     <p>{item.sold_quantity}</p>
                     <p>{item.picture}</p>
+
+                    <PriceBox
+                        price={item.price}
+                    />
+                    <DescriptionBox
+                        itemDescription={item.description}
+                    />
                 </div>;
         }
 
@@ -64,6 +72,7 @@ class ItemDetailPage extends React.Component {
                 <div>
                     {item_html}
                 </div>
+
             </div>
 
 

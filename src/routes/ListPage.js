@@ -23,7 +23,6 @@ class Home extends Component {
     };
 
     showSearch = (query) => {
-        debugger;
         this.setState({searchQuery: query});
     };
 
