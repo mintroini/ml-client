@@ -1,5 +1,7 @@
 import React from 'react';
 import SearchClient from './SearchClient';
+import '../../App.scss';
+
 
 class ItemSearch extends React.Component {
     state = {
@@ -54,7 +56,7 @@ class ItemSearch extends React.Component {
         ));
 
         return (
-            <div id='food-search'>
+            <div id='SearchList__Main'>
                 <table className='ui selectable structured large table'>
                     <tbody>
                     {itemsRows}

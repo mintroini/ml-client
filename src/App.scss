@@ -1,23 +1,62 @@
+$ml-yellow: #ffe600;
+$ml-black: #333333;
+$ml-grey: #eeeeee;
+$ml-dark-grey: #999999;
+$ml-blue: #ffe600;
+$ml-white: #ffffff;
 
+.searchBox__Main {
+  background-color: $ml-yellow;
+  padding-left: 10%;
+  padding-right: 10%;
 
-.MainBody{
-  background-color: #eeeeee;
 }
 
-.searchBoxRoot {
-      background-color: #ffe600;
-}
-.searchBoxRoot input {
-  vertical-align: middle;
-  position: relative;
-  margin-top: -40px;
-  padding: 2px;
-  width: 80vw;
-  margin-left: 70px;
-  max-width: 80%;
-}
+.searchBox__Brand {
 
-.app-brand {
-  vertical-align: middle;
   width: 5vw;
+  img {
+    padding-top: 5px;
+  }
 }
+
+.searchBox__Search {
+  vertical-align: middle;
+  input{
+    font-size:18px;
+    width:70vw;
+  }
+  img {
+    width: auto;
+  }
+}
+
+
+.searchBox__Brand, .searchBox__Search {
+  display: inline;
+}
+
+.detailPage {
+  background-color: $ml-grey;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+
+  .Body{
+    background-color: $ml-white;
+  }
+  p{
+
+  }
+}
+
+.list {
+  background-color: #ffffff;
+}
+
+.searchList__Main {
+  background-color: aqua;
+}
+
+
+

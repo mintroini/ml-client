@@ -4,7 +4,6 @@ import DescriptionBox from '../DescriptionBox';
 import PriceBox from '../PriceBox';
 
 
-
 class ItemDetailPage extends React.Component {
     state = {
         itemId: this.props.selectedItemId,
@@ -22,14 +21,14 @@ class ItemDetailPage extends React.Component {
         }
     }
 
-/*    componentWillReceiveProps(props) {
-        debugger;
-        if (props.selectedItemId.length > 0) {
-            this.getItemDetails(props.selectedItemId);
-        }
-    }
-*/
-    getItemDetails= (itemid) => {
+    /*    componentWillReceiveProps(props) {
+     debugger;
+     if (props.selectedItemId.length > 0) {
+     this.getItemDetails(props.selectedItemId);
+     }
+     }
+     */
+    getItemDetails = (itemid) => {
 
         ItemDetailClient.search(itemid, (resp) => {
             this.setState({
@@ -46,33 +45,34 @@ class ItemDetailPage extends React.Component {
 
         if (this.state.showItem) {
             item_html =
-                <div>
-                    <h1>{item.title}</h1>
+                <div className="detailPage">
+                    <div className="Body">
+                        <p>{item.picture}</p>
 
-                    <p>{item.condition}</p>
+                        <h1>{item.title}</h1>
+                        <p>{item.condition}</p>
+                        <p>{item.free_shipping}</p>
+                        <p>{item.id}</p>
 
-                    <p>{item.free_shipping}</p>
-                    <p>{item.id}</p>
+                        <p>{item.sold_quantity}</p>
 
-                    <p>{item.sold_quantity}</p>
-                    <p>{item.picture}</p>
+                        <button>Comprar
+                        </button>
 
-                    <PriceBox
-                        price={item.price}
-                    />
-                    <DescriptionBox
-                        itemDescription={item.description}
-                    />
+                        <PriceBox
+                            price={item.price}
+                        />
+                        <DescriptionBox
+                            itemDescription={item.description}
+                        />
+                    </div>
+
                 </div>;
         }
 
         return (
-            <div className='ui selectable structured large table'>
-
-                <div>
-                    {item_html}
-                </div>
-
+            <div className='detailContainer'>
+                {item_html}
             </div>
 
 

@@ -29,7 +29,7 @@ class Home extends Component {
     render() {
         const {searchQuery} = this.state;
         return (
-            <div className='App'>
+            <div className='ListPage__Main'>
                 <SearchBox
                     onQueryChange={this.showSearch}
                 />
