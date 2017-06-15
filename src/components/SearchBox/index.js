@@ -1,4 +1,11 @@
+
 import React from 'react';
+import Link from '../Link';
+
+import logoUrl from './Logo_ML.png';
+import logoUrl2x from './Logo_ML@2x.png';
+//import logoSearch from './ic_Search.png';
+//import logoSearch2x from './ic_Search@2x.png';
 
 class ItemSearch extends React.Component {
     state = {
@@ -32,24 +39,24 @@ class ItemSearch extends React.Component {
     render() {
 
         return (
-            <div className='ui fluid search'>
-                <div className='ui icon input'>
-                    <input
-                        className='prompt'
-                        type='text'
-                        placeholder='Search Items22!...'
-                        value={this.state.searchValue}
-                        onChange={this.handleSearchChange}
-                        onKeyPress={this.handleEnter}
-                    />
-                    <i className='search icon'/>
-                </div>
-                <i
-                    className='remove icon'
-                    onClick={this.handleSearchCancel}
-
-                />
-            </div>
+            <div className='searchBoxRoot'>
+        <div className='app-container'>
+          <Link className='app-brand' to="/">
+            <img src={logoUrl} srcSet={`${logoUrl2x} 2x`} alt="MercadoLibre" />
+          </Link>
+          <div className='app-searchDiv'>
+          <input
+              className='prompt'
+              type='text'
+              placeholder='Search Items22!...'
+              value={this.state.searchValue}
+              onChange={this.handleSearchChange}
+              onKeyPress={this.handleEnter}
+          />
+          <i className='search icon'/>
+          </div>
+        </div>
+      </div>
 
         );
     }

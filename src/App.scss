@@ -1,5 +1,9 @@
-.App {
-  text-align: center;
+
+.header-root {
+  background-color: #982
+}
+.brand {
+  width: 5vw;
 }
 
 .App-logo {
@@ -21,4 +25,60 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/**
+ * React Starter Kit (https://www.reactstarterkit.com/)
+ *
+ * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+:root {
+  /*
+   * Typography
+   * ======================================================================== */
+
+  --font-family-base: 'Segoe UI', 'HelveticaNeue-Light', sans-serif;
+
+  /*
+   * Layout
+   * ======================================================================== */
+
+  --max-content-width: 1000px;
+
+  /*
+   * Media queries breakpoints
+   * ======================================================================== */
+
+  --screen-xs-min: 480px;  /* Extra small screen / phone */
+  --screen-sm-min: 768px;  /* Small screen / tablet */
+  --screen-md-min: 992px;  /* Medium screen / desktop */
+  --screen-lg-min: 1200px; /* Large screen / wide desktop */
+}
+
+:root {
+  --brand-color: #ffe600;
+}
+
+.searchBoxRoot {
+      background-color: #ffe600;
+}
+
+
+.searchBoxRoot input {
+  vertical-align: middle;
+  position: relative;
+  margin-top: -40px;
+  padding: 2px;
+  width: 80vw;
+  margin-left: 70px;
+  max-width: 80%;
+}
+
+.app-brand {
+  vertical-align: middle;
+  width: 5vw;
 }
