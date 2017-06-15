@@ -4,22 +4,15 @@
 import React, {Component} from 'react';
 
 
-import SearchList from '../components/SearchList';
 import ItemDetailPage from '../components/ItemDetailPage';
 import SearchBox from '../components/SearchBox';
 import '../App.scss';
 
 class ProductDetail extends Component {
+
     state = {
-        items: [],
-        selectedItemId: [],
-        searchQuery:""
-    };
-
-
-
-    goToPDP = (item) => {
-        this.setState({selectedItemId: item});
+        //after doing exact route, if I got here this param is there
+        selectedItemId: this.props.params.itemid || "",
     };
 
     showSearch = (query) => {
@@ -27,22 +20,12 @@ class ProductDetail extends Component {
     };
 
     render() {
-        const { selectedItemId, searchQuery} = this.state;
-
+        const {selectedItemId} = this.state;
         return (
             <div className='App'>
+                <SearchBox onQueryChange={this.showSearch}/>
                 <h1>Product Detail</h1>
-                <SearchBox
-                    onQueryChange={this.showSearch}
-                />
-
-                <SearchList
-                    searchQuery={searchQuery}
-                    onItemClick={this.goToPDP}
-                />
-                <ItemDetailPage
-                    selectedItemId={selectedItemId}
-                />
+                <ItemDetailPage selectedItemId={selectedItemId}/>
             </div>
         );
     }

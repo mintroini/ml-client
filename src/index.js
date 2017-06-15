@@ -11,7 +11,11 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path='/' component={Home} />
         <Route path='search' component={Home} />
-        <Route path='item' component={ProductDetail} />
+        <Route excact path='item' component={Home} />
+        <Route path='item/:itemid' component={ProductDetail} />
     </Router>,
     document.getElementById('root'));
 registerServiceWorker();
+
+//        <Route path='item/:id' component={ProductDetail} />
+//        <Route path='item/:itemid' component={() => <ProductDetail myProp={"dsa"}/>} />

@@ -48,7 +48,7 @@ class ItemSearch extends React.Component {
           <input
               className='prompt'
               type='text'
-              placeholder='Search Items22!...'
+              placeholder='Nunca dejes de Buscar'
               value={this.state.searchValue}
               onChange={this.handleSearchChange}
               onKeyPress={this.handleEnter}
