@@ -1,7 +1,9 @@
 import React from 'react';
 import ItemDetailClient from './ItemDetailClient';
 import DescriptionBox from '../DescriptionBox';
-import PriceBox from '../PriceBox';
+import ItemMainData from '../ItemMainData';
+import ItemImage from '../ItemImage';
+
 
 
 class ItemDetailPage extends React.Component {
@@ -21,13 +23,6 @@ class ItemDetailPage extends React.Component {
         }
     }
 
-    /*    componentWillReceiveProps(props) {
-     debugger;
-     if (props.selectedItemId.length > 0) {
-     this.getItemDetails(props.selectedItemId);
-     }
-     }
-     */
     getItemDetails = (itemid) => {
 
         ItemDetailClient.search(itemid, (resp) => {
@@ -47,21 +42,22 @@ class ItemDetailPage extends React.Component {
             item_html =
                 <div className="detailPage">
                     <div className="Body">
-                        <p>{item.picture}</p>
 
-                        <h1>{item.title}</h1>
-                        <p>{item.condition}</p>
-                        <p>{item.free_shipping}</p>
-                        <p>{item.id}</p>
 
-                        <p>{item.sold_quantity}</p>
 
-                        <button>Comprar
-                        </button>
+                        <ItemImage
+                            image={item.picture}
+                        />
 
-                        <PriceBox
+                        <ItemMainData
+                            title={item.title}
+                            condition={item.condition}
+                            free_shipping={item.free_shipping}
+                            itemid={item.id}
+                            sold_quantity={item.sold_quantity}
                             price={item.price}
                         />
+
                         <DescriptionBox
                             itemDescription={item.description}
                         />

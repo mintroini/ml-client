@@ -3,22 +3,26 @@
  */
 import React from 'react';
 
+import Button from 'react-bootstrap/lib/Button';
+
 
 class PriceBox extends React.Component {
 
     render() {
 
-        const {currency, amount, decimals} = this.props.price;
+        const {currency, amount} = this.props.price;
 
         return (
-            <div>
-                <h1>pricebox </h1>
-                <p>{currency}</p>
-                <p>{amount}</p>
-                <p>{decimals}</p>
+            <div className="priceBox">
+                <p>{currency}{amount}</p>
+                <Button bsStyle="primary">Comprar</Button>
+
             </div>
         );
     }
 }
 
 export default PriceBox;
+
+
+//<p>{decimals}</p>

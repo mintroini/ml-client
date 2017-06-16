@@ -5,7 +5,8 @@ import Home from './routes/Home';
 import ListPage from './routes/ListPage';
 import ProductDetail from './routes/ProductDetail';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import './bootstrap/css/bootstrap.css';
+import './App.scss';
 import { Router, Route, browserHistory } from 'react-router'
 
 ReactDOM.render(

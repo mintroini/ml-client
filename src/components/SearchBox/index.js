@@ -7,6 +7,9 @@ import logoUrl2x from './Logo_ML@2x.png';
 import logoSearch from './ic_Search.png';
 import logoSearch2x from './ic_Search@2x.png';
 
+import Col from 'react-bootstrap/lib/Col';
+import Row from 'react-bootstrap/lib/Row';
+
 class ItemSearch extends React.Component {
     state = {
         author: {},
@@ -39,30 +42,39 @@ class ItemSearch extends React.Component {
     render() {
 
         return (
-            <div className='searchBox__Main'>
 
-                <div className="searchBox__Brand">
-                    <Link>
-                        <img src={logoUrl} srcSet={`${logoUrl2x} 2x`} alt="MercadoLibre"/>
-                    </Link>
-                </div>
-                <div className='searchBox__Search'>
-                    <input
-                        className='prompt'
-                        type='text'
-                        placeholder='Nunca dejes de Buscar'
-                        value={this.state.searchValue}
-                        onChange={this.handleSearchChange}
-                        onKeyPress={this.handleEnter}
-                    />
-                    <button type="button" onClick={this.onClick}>
-                        <img className="searchIcon" src={logoSearch} srcSet={`${logoSearch2x} 2x`}
-                             alt="MercadoLibre"/>
-                    </button>
+            <div className="searchBar">
+                <Row className="show-grid">
+                    <Col xsOffset={0} mdOffset={1} xs={1} md={1} className="searchBox__Brand">
+                        <Link>
+                            <img src={logoUrl} srcSet={`${logoUrl2x} 2x`} alt="MercadoLibre"/>
+                        </Link>
 
-                </div>
+                    </Col>
+                    <Col md={10} xs={8}>
+                        <Row className="show-grid">
+                            <Col xs={8} md={10}>
+                                <input
+                                    className='prompt'
+                                    type='text'
+                                    placeholder='Nunca dejes de Buscar'
+                                    value={this.state.searchValue}
+                                    onChange={this.handleSearchChange}
+                                    onKeyPress={this.handleEnter}
+                                />
+                            </Col>
+                            <button type="button" onClick={this.onClick}>
+                                <img className="searchIcon" src={logoSearch} srcSet={`${logoSearch2x} 2x`}
+                                     alt="MercadoLibre"/>
+                            </button>
+                        </Row>
+                    </Col>
+                </Row>
+
 
             </div>
+
+
 
         );
     }

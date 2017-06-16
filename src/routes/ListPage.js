@@ -33,7 +33,6 @@ class Home extends Component {
                 <SearchBox
                     onQueryChange={this.showSearch}
                 />
-                <h1>List Page</h1>
 
                 <SearchList
                     searchQuery={searchQuery}

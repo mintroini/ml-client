@@ -6,7 +6,9 @@ import React, {Component} from 'react';
 import { browserHistory } from 'react-router';
 import ItemDetailPage from '../components/ItemDetailPage';
 import SearchBox from '../components/SearchBox';
-import '../App.scss';
+
+
+
 
 class ProductDetail extends Component {
 
@@ -31,7 +33,7 @@ class ProductDetail extends Component {
                 <SearchBox
                     searchQuery={searchQuery}
                     onQueryChange={this.showSearch}/>
-                <h1>Product Detail</h1>
+
                 <ItemDetailPage selectedItemId={selectedItemId}/>
             </div>
         );

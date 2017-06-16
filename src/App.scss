@@ -5,35 +5,29 @@ $ml-dark-grey: #999999;
 $ml-blue: #ffe600;
 $ml-white: #ffffff;
 
-.searchBox__Main {
+.searchBar {
   background-color: $ml-yellow;
-  padding-left: 10%;
-  padding-right: 10%;
-
-}
-
-.searchBox__Brand {
-
-  width: 5vw;
-  img {
-    padding-top: 5px;
-  }
-}
-
-.searchBox__Search {
-  vertical-align: middle;
   input{
     font-size:18px;
-    width:70vw;
-  }
-  img {
-    width: auto;
+    width:100%;
   }
 }
-
-
-.searchBox__Brand, .searchBox__Search {
-  display: inline;
+.itemMainData{
+  p{
+    font-size:14px;
+    margin-top:32px;
+    margin-bottom:16px;
+  }
+  h1{
+    margin-bottom: 32px;
+    font-size:24px;
+  }
+}
+.priceBox{
+  p{
+    font-size:46px;
+    margin-bottom: 32px;
+  }
 }
 
 .detailPage {
