@@ -43,7 +43,7 @@ class ItemSearch extends React.Component {
 
         return (
 
-            <div className="searchBar">
+            <div className="searchBox">
                 <Row className="show-grid">
                     <Col xsOffset={0} mdOffset={1} xs={1} md={1} className="searchBox__Brand">
                         <Link>

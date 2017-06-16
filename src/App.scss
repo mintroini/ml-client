@@ -5,7 +5,7 @@ $ml-dark-grey: #999999;
 $ml-blue: #ffe600;
 $ml-white: #ffffff;
 
-.searchBar {
+.searchBox {
   background-color: $ml-yellow;
   input{
     font-size:18px;
@@ -29,6 +29,23 @@ $ml-white: #ffffff;
     margin-bottom: 32px;
   }
 }
+.descriptionBox{
+  margin-left: 32px;
+  .descTitle{
+    margin-bottom: 32px;
+    font-size:28px;
+  }
+}
+.productDetail__Main{
+  background-color: $ml-grey;
+}
+
+.itemDetailPage{
+  .container{
+    background-color: $ml-white;
+  }
+}
+////////////////////
 
 .detailPage {
   background-color: $ml-grey;

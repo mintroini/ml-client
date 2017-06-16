@@ -29,7 +29,7 @@ class ProductDetail extends Component {
     render() {
         const {selectedItemId, searchQuery} = this.state;
         return (
-            <div className='App'>
+            <div className='productDetail__Main'>
                 <SearchBox
                     searchQuery={searchQuery}
                     onQueryChange={this.showSearch}/>

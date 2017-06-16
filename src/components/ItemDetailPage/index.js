@@ -3,7 +3,9 @@ import ItemDetailClient from './ItemDetailClient';
 import DescriptionBox from '../DescriptionBox';
 import ItemMainData from '../ItemMainData';
 import ItemImage from '../ItemImage';
-
+import Col from 'react-bootstrap/lib/Col';
+import Row from 'react-bootstrap/lib/Row';
+import Grid from 'react-bootstrap/lib/Grid';
 
 
 class ItemDetailPage extends React.Component {
@@ -40,34 +42,45 @@ class ItemDetailPage extends React.Component {
 
         if (this.state.showItem) {
             item_html =
-                <div className="detailPage">
-                    <div className="Body">
 
 
+                <Grid>
+                    <Row className="show-grid">
 
-                        <ItemImage
-                            image={item.picture}
-                        />
+                        <Col mdOffset={1} md={7}>
+                            <ItemImage
+                                image={item.picture}
+                            />
+                        </Col>
+                        <Col md={3}>
+                            <ItemMainData
+                                title={item.title}
+                                condition={item.condition}
+                                free_shipping={item.free_shipping}
+                                itemid={item.id}
+                                sold_quantity={item.sold_quantity}
+                                price={item.price}
+                            />
 
-                        <ItemMainData
-                            title={item.title}
-                            condition={item.condition}
-                            free_shipping={item.free_shipping}
-                            itemid={item.id}
-                            sold_quantity={item.sold_quantity}
-                            price={item.price}
-                        />
+                        </Col>
+                    </Row>
+                    <Row className="show-grid">
 
-                        <DescriptionBox
-                            itemDescription={item.description}
-                        />
-                    </div>
+                        <Col mdOffset={1} md={10}>
 
-                </div>;
+                            <div className="descriptionBox">
+                                <div className="descTitle">Descripción del Producto</div>
+                                <DescriptionBox
+                                    itemDescription={item.description}
+                                />
+                            </div>
+                        </Col>
+                    </Row>
+                </Grid>;
         }
 
         return (
-            <div className='detailContainer'>
+            <div className='itemDetailPage'>
                 {item_html}
             </div>
 
