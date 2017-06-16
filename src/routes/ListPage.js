@@ -23,13 +23,14 @@ class Home extends Component {
     };
 
     showSearch = (query) => {
+        debugger;
         this.setState({searchQuery: query});
     };
 
     render() {
         const {searchQuery} = this.state;
         return (
-            <div className='ListPage__Main'>
+            <div className='listPage__Main'>
                 <SearchBox
                     onQueryChange={this.showSearch}
                 />

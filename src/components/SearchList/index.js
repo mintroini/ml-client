@@ -1,6 +1,12 @@
 import React from 'react';
 import SearchClient from './SearchClient';
+import ItemImage from '../ItemImage';
+import ListItemData from '../ListItemData';
 import '../../App.scss';
+import Col from 'react-bootstrap/lib/Col';
+import Row from 'react-bootstrap/lib/Row';
+import Grid from 'react-bootstrap/lib/Grid';
+import BreadCrumbs from '../BreadCrumbs';
 
 
 class ItemSearch extends React.Component {
@@ -49,20 +55,40 @@ class ItemSearch extends React.Component {
         const {items} = this.state;
 
         const itemsRows = items.map((item, idx) => (
-            <tr key={idx} onClick={() => this.props.onItemClick(item.id)}>
-                <td className='right aligned'>{item.id}</td>
-                <td className='right aligned'>{item.title}</td>
-            </tr>
+            <Row className="itemRow" key={idx} onClick={() => this.props.onItemClick(item.id)}>
+                <Col className="itemImage" md={2}>
+                    <ItemImage
+                        image={item.picture}
+                    />
+                </Col>
+                <Col md={6}>
+                    <ListItemData
+                        title={item.title}
+                        price={item.price}
+                        state_name={item.state_name}
+                        free_shipping={item.free_shipping}
+                    />
+
+
+                </Col>
+                <Col md={2}>
+                    {item.state_name}
+                </Col>
+
+            </Row>
+
         ));
 
         return (
-            <div id='SearchList__Main'>
-                <table className='ui selectable structured large table'>
-                    <tbody>
+
+            <Col mdOffset={1} md={10}>
+                <BreadCrumbs>
+                </BreadCrumbs>
+                <Grid className="listMainCol">
                     {itemsRows}
-                    </tbody>
-                </table>
-            </div>
+                </Grid>
+            </Col>
+
         );
     }
 }

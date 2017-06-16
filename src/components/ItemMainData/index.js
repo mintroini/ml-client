@@ -10,14 +10,25 @@ import Row from 'react-bootstrap/lib/Row';
 class ItemMainData extends React.Component {
 
     render() {
-        const {title, condition, sold_quantity, price} = this.props;
+        const {title, sold_quantity, price} = this.props;
+        let {condition} = this.props;
+        let sold = "Vendidos";
+        if (sold_quantity === 1) {
+            sold = "Vendido";
+        }
+        if (condition === "new") {
+            condition = "Nuevo";
+        } else {
+            condition = "Usado";
+
+        }
 
         return (
             <Row className="show-grid">
 
                 <div className="itemMainData">
 
-                    <p>{condition} - {sold_quantity} Vendidos</p>
+                    <p>{condition} - {sold_quantity} {sold} </p>
 
 
                     <h1>{title}</h1>
@@ -25,6 +36,7 @@ class ItemMainData extends React.Component {
 
                     <PriceBox
                         price={price}
+                        listPage={false}
                     />
 
 

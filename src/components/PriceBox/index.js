@@ -5,20 +5,39 @@ import React from 'react';
 
 import Button from 'react-bootstrap/lib/Button';
 
+import logoShip from './ic_shipping.png';
+import logoShip2x from './ic_shipping@2x.png';
 
 class PriceBox extends React.Component {
 
     render() {
 
-        const {currency, amount} = this.props.price;
+        const {amount} = this.props.price;
+        const {listPage} = this.props;
 
-        return (
-            <div className="priceBox">
-                <p>{currency}{amount}</p>
-                <Button bsStyle="primary">Comprar</Button>
+        if (listPage) {
+            let free_ship = "";
+            const {free_shipping} = this.props;
+            if (free_shipping) {
+                free_ship = <img src={logoShip} srcSet={`${logoShip2x} 2x`}
+                                 alt="Has Free Shipping"/>;
+            }
 
-            </div>
-        );
+            return (
+                <div className="priceBox">
+                    <p>$ {amount} {free_ship}</p>
+                </div>
+            );
+        } else {
+
+            return (
+                <div className="priceBox">
+                    <p>$ {amount}</p>
+                    <Button bsStyle="primary">Comprar</Button>
+
+                </div>
+            );
+        }
     }
 }
 

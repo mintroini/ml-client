@@ -9,6 +9,8 @@ import logoSearch2x from './ic_Search@2x.png';
 
 import Col from 'react-bootstrap/lib/Col';
 import Row from 'react-bootstrap/lib/Row';
+import { browserHistory } from 'react-router';
+
 
 class ItemSearch extends React.Component {
     state = {
@@ -30,13 +32,10 @@ class ItemSearch extends React.Component {
         });
     };
 
-    handleSearchCancel = () => {
-        this.setState({
-            author: {},
-            categories: [],
-            items: [],
-            searchValue: '',
-        });
+    onClick = (value) => {
+        browserHistory.push('/items?search=' + value);
+        this.props.onQueryChange(value);
+
     };
 
     render() {
@@ -63,7 +62,7 @@ class ItemSearch extends React.Component {
                                     onKeyPress={this.handleEnter}
                                 />
                             </Col>
-                            <button type="button" onClick={this.onClick}>
+                            <button type="button" onClick={()=>this.onClick(this.state.searchValue)}>
                                 <img className="searchIcon" src={logoSearch} srcSet={`${logoSearch2x} 2x`}
                                      alt="MercadoLibre"/>
                             </button>

@@ -12,7 +12,7 @@ class ItemImage extends React.Component {
 
         return (
             <div>
-                <Image src={image} responsive />
+                <Image className="imageComponent" src={image} />
             </div>
 
         );

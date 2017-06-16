@@ -27,13 +27,10 @@ class Home extends Component {
 
 
         return (
-            <div className='App'>
+            <div className='home__Main'>
                 <SearchBox
                     onQueryChange={this.showSearch}
                 />
-                <h1>Home</h1>
-
-
             </div>
         );
     }

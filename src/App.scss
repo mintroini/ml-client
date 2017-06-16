@@ -7,44 +7,77 @@ $ml-white: #ffffff;
 
 .searchBox {
   background-color: $ml-yellow;
-  input{
-    font-size:18px;
-    width:100%;
+  input {
+    font-size: 18px;
+    width: 100%;
   }
-}
-.itemMainData{
-  p{
-    font-size:14px;
-    margin-top:32px;
-    margin-bottom:16px;
-  }
-  h1{
-    margin-bottom: 32px;
-    font-size:24px;
-  }
-}
-.priceBox{
-  p{
-    font-size:46px;
-    margin-bottom: 32px;
-  }
-}
-.descriptionBox{
-  margin-left: 32px;
-  .descTitle{
-    margin-bottom: 32px;
-    font-size:28px;
-  }
-}
-.productDetail__Main{
-  background-color: $ml-grey;
 }
 
-.itemDetailPage{
-  .container{
-    background-color: $ml-white;
+.itemMainData {
+  p {
+    font-size: 14px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    margin-bottom: 32px;
+    font-size: 24px;
+  }
+  .priceBox {
+    p {
+      font-size: 46px;
+      margin-bottom: 32px;
+    }
   }
 }
+
+.descriptionBox {
+  margin-left: 32px;
+  .descTitle {
+    margin-bottom: 32px;
+    font-size: 28px;
+  }
+}
+
+.home__Main, .productDetail__Main, .listPage__Main {
+  background-color: $ml-grey;
+  height: 100%;
+  overflow: auto;
+}
+
+.itemDetailPage {
+  .container {
+    background-color: $ml-white;
+  }
+  .imageComponent {
+    width: 680px;
+  }
+}
+
+.listMainCol {
+  background-color: $ml-white;
+  margin-bottom: 40px;
+  .priceBox {
+    p {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+    margin-left: 16px;
+  }
+  .imageComponent {
+    width: 180px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  .itemRow {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}
+
 ////////////////////
 
 .detailPage {
@@ -53,10 +86,10 @@ $ml-white: #ffffff;
   padding-right: 10%;
   padding-top: 2%;
 
-  .Body{
+  .Body {
     background-color: $ml-white;
   }
-  p{
+  p {
 
   }
 }
