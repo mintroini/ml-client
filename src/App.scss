@@ -42,7 +42,6 @@ $ml-white: #ffffff;
 .home__Main, .productDetail__Main, .listPage__Main {
   background-color: $ml-grey;
   height: 100%;
-  overflow: auto;
 }
 
 .itemDetailPage {
@@ -78,29 +77,6 @@ $ml-white: #ffffff;
   }
 }
 
-////////////////////
-
-.detailPage {
-  background-color: $ml-grey;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 2%;
-
-  .Body {
-    background-color: $ml-white;
-  }
-  p {
-
-  }
-}
-
-.list {
-  background-color: #ffffff;
-}
-
-.searchList__Main {
-  background-color: aqua;
-}
 
 
 
