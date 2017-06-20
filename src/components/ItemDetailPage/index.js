@@ -39,8 +39,10 @@ class ItemDetailPage extends React.Component {
 
     render() {
         const {item} = this.state;
+        let categories = item.categories || [];
+
         let item_html = "";
-        let categories = ["testing"];
+
         if (this.state.showItem) {
             item_html =
 
@@ -82,12 +84,15 @@ class ItemDetailPage extends React.Component {
         }
 
         return (
-            <div className='itemDetailPage'>
+
+            <Grid>
                 <BreadCrumbs
                     crumbs={categories}
                 />
-                {item_html}
-            </div>
+                <div className='itemDetailPage'>
+                    {item_html}
+                </div>
+            </Grid>
 
 
         );

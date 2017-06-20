@@ -5,6 +5,9 @@ $ml-dark-grey: #999999;
 $ml-blue: #3483fa;
 $ml-white: #ffffff;
 
+$ml-spacer-red: 16px;
+$ml-spacer-green: 32px;
+
 .header__Main{
   background-color: $ml-yellow;
   padding-top: 8px;
@@ -33,20 +36,20 @@ $ml-white: #ffffff;
 .itemMainData {
   p {
     font-size: 14px;
-    margin-top: 32px;
-    margin-bottom: 16px;
+    margin-top: $ml-spacer-green;
+    margin-bottom: $ml-spacer-red;
   }
   h1 {
-    margin-bottom: 32px;
+    margin-bottom: $ml-spacer-green;
     font-size: 24px;
   }
   .priceBox {
     p {
       font-size: 46px;
-      margin-bottom: 32px;
+      margin-bottom: $ml-spacer-green;
     }
     .buttonBuy{
-      padding-right: 32px;
+      padding-right: $ml-spacer-green;
       width: 100%;
     }
     .btn{
@@ -57,10 +60,10 @@ $ml-white: #ffffff;
 }
 
 .descriptionBox {
-  margin-top: 32px;
-  margin-left: 32px;
+  margin-top: $ml-spacer-green;
+  margin-left: $ml-spacer-green;
   .descTitle {
-    margin-bottom: 32px;
+    margin-bottom: $ml-spacer-green;
     font-size: 28px;
   }
 }
@@ -92,12 +95,12 @@ $ml-white: #ffffff;
 .listMainCol {
   background-color: $ml-white;
   margin-bottom: 40px;
-  margin-left: 16px;
+  margin-left: $ml-spacer-red;
 
   .priceBox {
     p {
       font-size: 24px;
-      margin-bottom: 32px;
+      margin-bottom: $ml-spacer-green;
     }
 
   }
@@ -110,12 +113,12 @@ $ml-white: #ffffff;
     font-size: 18px;
   }
   .itemRow {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    margin-left: 16px;
+    margin-top: $ml-spacer-red;
+    margin-bottom: $ml-spacer-red;
+    margin-left: $ml-spacer-red;
   }
   .dataBox{
-    margin-left: 16px;
+    margin-left: $ml-spacer-red;
   }
 }
 
@@ -125,13 +128,13 @@ $ml-white: #ffffff;
 }
 
 .breadcrumbs {
-  margin-top:16px;
-  margin-bottom:16px;
+  margin-top:$ml-spacer-red;
+  margin-bottom:$ml-spacer-red;
 
   p {
     display: inline-block;
     margin-right: 8px;
-    font-size: 16px;
+    font-size: $ml-spacer-red;
   }
 
 }
