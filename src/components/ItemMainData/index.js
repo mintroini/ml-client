@@ -24,24 +24,22 @@ class ItemMainData extends React.Component {
         }
 
         return (
-            <Row className="show-grid">
-
-                <div className="itemMainData">
-
-                    <p>{condition} - {sold_quantity} {sold} </p>
 
 
-                    <h1>{title}</h1>
+            <div className="itemMainData">
+
+                <p>{condition} - {sold_quantity} {sold} </p>
 
 
-                    <PriceBox
-                        price={price}
-                        listPage={false}
-                    />
+                <h1>{title}</h1>
 
 
-                </div>
-            </Row>
+                <PriceBox
+                    price={price}
+                    listPage={false}
+                />
+            </div>
+
 
         );
     }

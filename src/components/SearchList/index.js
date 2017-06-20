@@ -52,38 +52,42 @@ class ItemSearch extends React.Component {
 
 
     render() {
-        const {items} = this.state;
 
+        const {items, categories} = this.state;
         const itemsRows = items.map((item, idx) => (
-            <Row className="itemRow" key={idx} onClick={() => this.props.onItemClick(item.id)}>
-                <Col className="itemImage" md={2}>
-                    <ItemImage
-                        image={item.picture}
-                    />
-                </Col>
-                <Col md={6}>
-                    <ListItemData
-                        title={item.title}
-                        price={item.price}
-                        state_name={item.state_name}
-                        free_shipping={item.free_shipping}
-                    />
+            <div>
+                <Row className="itemRow no-gutters" key={idx} onClick={() => this.props.onItemClick(item.id)}>
+                    <Col className="itemImage" md={2}>
+                        <ItemImage
+                            image={item.picture}
+                        />
+                    </Col>
+                    <Col className="dataBox" md={6}>
+                        <ListItemData
+                            title={item.title}
+                            price={item.price}
+                            state_name={item.state_name}
+                            free_shipping={item.free_shipping}
+                        />
 
 
-                </Col>
-                <Col md={2}>
-                    {item.state_name}
-                </Col>
+                    </Col>
+                    <Col md={2}>
+                        {item.state_name}
+                    </Col>
 
-            </Row>
+                </Row>
+                <div className="divider"/>
+            </div>
 
         ));
 
         return (
 
             <Col mdOffset={1} md={10}>
-                <BreadCrumbs>
-                </BreadCrumbs>
+                <BreadCrumbs
+                    crumbs={categories}
+                />
                 <Grid className="listMainCol">
                     {itemsRows}
                 </Grid>

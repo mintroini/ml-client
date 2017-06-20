@@ -8,11 +8,20 @@ import React from 'react';
 class BreadCrumbs extends React.Component {
 
     render() {
+        const {crumbs} = this.props;
+
+
+        const crumbsRows = crumbs.map((crumb, idx) => (
+            <p key={idx}>
+                {crumb} >
+            </p>
+
+        ));
 
 
         return (
-            <div>
-<p>Breadcrumbss....</p>
+            <div className="breadcrumbs">
+                {crumbsRows}
             </div>
 
         );

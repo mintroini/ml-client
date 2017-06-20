@@ -2,7 +2,7 @@ $ml-yellow: #ffe600;
 $ml-black: #333333;
 $ml-grey: #eeeeee;
 $ml-dark-grey: #999999;
-$ml-blue: #ffe600;
+$ml-blue: #3483fa;
 $ml-white: #ffffff;
 
 .searchBox {
@@ -28,10 +28,19 @@ $ml-white: #ffffff;
       font-size: 46px;
       margin-bottom: 32px;
     }
+    .buttonBuy{
+      padding-right: 32px;
+      width: 100%;
+    }
+    .btn{
+      width: 100%;
+      background-color:$ml-blue;
+    }
   }
 }
 
 .descriptionBox {
+  margin-top: 32px;
   margin-left: 32px;
   .descTitle {
     margin-bottom: 32px;
@@ -39,9 +48,19 @@ $ml-white: #ffffff;
   }
 }
 
-.home__Main, .productDetail__Main, .listPage__Main {
+.productDetail__Main, .listPage__Main {
   background-color: $ml-grey;
   height: 100%;
+}
+
+.home__Main, .listPage__Main {
+  background-color: $ml-grey;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  //overflow: auto;
 }
 
 .itemDetailPage {
@@ -56,17 +75,19 @@ $ml-white: #ffffff;
 .listMainCol {
   background-color: $ml-white;
   margin-bottom: 40px;
+  margin-left: 16px;
+
   .priceBox {
     p {
       font-size: 24px;
       margin-bottom: 32px;
     }
-    margin-left: 16px;
+
   }
   .imageComponent {
     width: 180px;
-    margin-left: 16px;
-    margin-right: 16px;
+    height: 180px;
+    border-radius: 4px;
   }
   h1 {
     font-size: 18px;
@@ -74,9 +95,44 @@ $ml-white: #ffffff;
   .itemRow {
     margin-top: 16px;
     margin-bottom: 16px;
+    margin-left: 16px;
+  }
+  .dataBox{
+    margin-left: 16px;
   }
 }
 
+.blankSpace{
+  background-color: #1b6d85;
+  width:30px;
+}
 
+.breadcrumbs {
+  margin-top:16px;
+  margin-bottom:16px;
 
+  p {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 16px;
+  }
 
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}

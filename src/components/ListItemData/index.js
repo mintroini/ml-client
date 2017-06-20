@@ -17,19 +17,14 @@ class ListItemData extends React.Component {
         return (
             <div className="itemListData">
 
-                <Row className="show-grid">
-                    <PriceBox
-                        price={price}
-                        listPage={true}
-                        free_shipping={free_shipping}
-                    />
-                </Row>
 
-                <Row className="show-grid">
-                    <Col md={5}>
-                        <h1>{title}</h1>
-                    </Col>
-                </Row>
+                <PriceBox
+                    price={price}
+                    listPage={true}
+                    free_shipping={free_shipping}
+                />
+                <h1>{title}</h1>
+
 
             </div>
         );

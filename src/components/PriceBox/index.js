@@ -33,8 +33,9 @@ class PriceBox extends React.Component {
             return (
                 <div className="priceBox">
                     <p>$ {amount}</p>
-                    <Button bsStyle="primary">Comprar</Button>
-
+                    <div className="buttonBuy">
+                        <Button bsStyle="primary">Comprar</Button>
+                    </div>
                 </div>
             );
         }

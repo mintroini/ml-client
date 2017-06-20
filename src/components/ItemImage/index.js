@@ -11,9 +11,9 @@ class ItemImage extends React.Component {
         const {image} = this.props;
 
         return (
-            <div>
+
                 <Image className="imageComponent" src={image} />
-            </div>
+
 
         );
     }

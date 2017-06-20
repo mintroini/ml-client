@@ -3,6 +3,7 @@ import ItemDetailClient from './ItemDetailClient';
 import DescriptionBox from '../DescriptionBox';
 import ItemMainData from '../ItemMainData';
 import ItemImage from '../ItemImage';
+import BreadCrumbs from '../BreadCrumbs';
 import Col from 'react-bootstrap/lib/Col';
 import Row from 'react-bootstrap/lib/Row';
 import Grid from 'react-bootstrap/lib/Grid';
@@ -39,13 +40,13 @@ class ItemDetailPage extends React.Component {
     render() {
         const {item} = this.state;
         let item_html = "";
-
+        let categories = ["testing"];
         if (this.state.showItem) {
             item_html =
 
 
-                <Grid>
-                    <Row className="show-grid">
+                <Grid >
+                    <Row className="show-grid no-gutters">
 
                         <Col mdOffset={1} md={7}>
                             <ItemImage
@@ -64,6 +65,7 @@ class ItemDetailPage extends React.Component {
 
                         </Col>
                     </Row>
+
                     <Row className="show-grid">
 
                         <Col mdOffset={1} md={10}>
@@ -81,6 +83,9 @@ class ItemDetailPage extends React.Component {
 
         return (
             <div className='itemDetailPage'>
+                <BreadCrumbs
+                    crumbs={categories}
+                />
                 {item_html}
             </div>
 
