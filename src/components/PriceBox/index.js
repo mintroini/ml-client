@@ -12,9 +12,12 @@ class PriceBox extends React.Component {
 
     render() {
 
-        const {amount} = this.props.price;
+        let {amount, decimals} = this.props.price;
         const {listPage} = this.props;
-
+        if (decimals === 0) {
+            decimals = "";
+        }
+        amount = amount.toLocaleString('de-DE');
         if (listPage) {
             let free_ship = "";
             const {free_shipping} = this.props;
@@ -25,14 +28,16 @@ class PriceBox extends React.Component {
 
             return (
                 <div className="priceBox">
-                    <p>$ {amount} {free_ship}</p>
+                    <p>$ {amount} <sup>{decimals}</sup> {free_ship}</p>
                 </div>
             );
         } else {
 
             return (
                 <div className="priceBox">
-                    <p>$ {amount}</p>
+                    <div>
+                        <p>$ {amount} <sup>{decimals}</sup></p>
+                    </div>
                     <div className="buttonBuy">
                         <Button bsStyle="primary">Comprar</Button>
                     </div>
