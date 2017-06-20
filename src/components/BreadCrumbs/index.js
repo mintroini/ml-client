@@ -1,3 +1,4 @@
+
 /**
  * Created by mintroini on 6/15/17.
  */
@@ -9,11 +10,20 @@ class BreadCrumbs extends React.Component {
 
     render() {
         const {crumbs} = this.props;
+        let fixed_crumbs = [];
 
+        for (let i = 0; i < crumbs.length; i++) {
+            if (i === crumbs.length -1) {
+                fixed_crumbs.push(crumbs[i]);
 
-        const crumbsRows = crumbs.map((crumb, idx) => (
+            } else {
+                fixed_crumbs.push(crumbs[i] + "  >  ");
+            }
+        }
+
+        const crumbsRows = fixed_crumbs.map((crumb, idx) => (
             <p key={idx}>
-                {crumb} >
+                {crumb}
             </p>
 
         ));
@@ -29,3 +39,4 @@ class BreadCrumbs extends React.Component {
 }
 
 export default BreadCrumbs;
+

@@ -55,7 +55,7 @@ class ItemSearch extends React.Component {
 
         const {items, categories} = this.state;
         const itemsRows = items.map((item, idx) => (
-            <div>
+            <div key={idx} >
                 <Row className="itemRow no-gutters" key={idx} onClick={() => this.props.onItemClick(item.id)}>
                     <Col className="itemImage" md={2}>
                         <ItemImage
@@ -85,9 +85,11 @@ class ItemSearch extends React.Component {
         return (
 
             <Col mdOffset={1} md={10}>
-                <BreadCrumbs
-                    crumbs={categories}
-                />
+                <Grid>
+                    <BreadCrumbs
+                        crumbs={categories}
+                    />
+                </Grid>
                 <Grid className="listMainCol">
                     {itemsRows}
                 </Grid>

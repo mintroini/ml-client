@@ -24,6 +24,8 @@ class ItemSearch extends React.Component {
     };
     handleEnter = (e) => {
         if (e.key === 'Enter') {
+            browserHistory.push('/items?search=' + e.target.value);
+
             this.props.onQueryChange(e.target.value);
         }
     };

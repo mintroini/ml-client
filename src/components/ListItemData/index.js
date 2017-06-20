@@ -5,8 +5,6 @@
 import React from 'react';
 
 import PriceBox from '../PriceBox';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
 
 
 class ListItemData extends React.Component {
@@ -32,9 +30,3 @@ class ListItemData extends React.Component {
 }
 
 export default ListItemData;
-/*
- title={item.title}
- price={item.price}
- state_name={item.state_name}
- free_shipping={item.free_shipping}
- */
