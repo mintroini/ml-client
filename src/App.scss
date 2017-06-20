@@ -5,8 +5,12 @@ $ml-dark-grey: #999999;
 $ml-blue: #3483fa;
 $ml-white: #ffffff;
 
-.searchBox {
+.header__Main{
   background-color: $ml-yellow;
+  padding-top: 8px;
+  padding-bottom:8px;
+}
+.searchBox {
   input {
     font-size: 18px;
     width: 100%;
