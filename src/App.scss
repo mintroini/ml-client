@@ -14,8 +14,21 @@ $ml-white: #ffffff;
   input {
     font-size: 18px;
     width: 100%;
+    border: none;
+
   }
+  button{
+    border: none;
+    font-size: 18px;
+    background-color: $ml-grey;
+    padding-top:1px;
+    padding-bottom:1px;
+    border-radius:0px;
+
+  }
+
 }
+
 
 .itemMainData {
   p {
