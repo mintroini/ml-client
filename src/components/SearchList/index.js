@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/lib/Col';
 import Row from 'react-bootstrap/lib/Row';
 import Grid from 'react-bootstrap/lib/Grid';
 import BreadCrumbs from '../BreadCrumbs';
+import {Helmet} from "react-helmet";
 
 
 class ItemSearch extends React.Component {
@@ -54,8 +55,13 @@ class ItemSearch extends React.Component {
     render() {
 
         const {items, categories} = this.state;
+
+
+        let head = categories.join(',');
+
+
         const itemsRows = items.map((item, idx) => (
-            <div key={idx} >
+            <div key={idx}>
                 <Row className="itemRow no-gutters" key={idx} onClick={() => this.props.onItemClick(item.id)}>
                     <Col className="itemImage" md={2}>
                         <ItemImage
@@ -85,6 +91,10 @@ class ItemSearch extends React.Component {
         return (
 
             <Col mdOffset={1} md={10}>
+                <Helmet>
+                    <meta charSet="utf-8"/>
+                    <title>{head}</title>
+                </Helmet>
                 <Grid>
                     <BreadCrumbs
                         crumbs={categories}

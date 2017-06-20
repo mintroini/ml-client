@@ -7,6 +7,7 @@ import BreadCrumbs from '../BreadCrumbs';
 import Col from 'react-bootstrap/lib/Col';
 import Row from 'react-bootstrap/lib/Row';
 import Grid from 'react-bootstrap/lib/Grid';
+import {Helmet} from "react-helmet";
 
 
 class ItemDetailPage extends React.Component {
@@ -40,7 +41,7 @@ class ItemDetailPage extends React.Component {
     render() {
         const {item} = this.state;
         let categories = item.categories || [];
-
+        let head = (item && item.title && item.price && item.price.amount) ? item.title + " $" + item.price.amount : "";
         let item_html = "";
 
         if (this.state.showItem) {
@@ -48,6 +49,10 @@ class ItemDetailPage extends React.Component {
 
 
                 <Grid >
+                    <Helmet>
+                        <meta charSet="utf-8"/>
+                        <title>{head} </title>
+                    </Helmet>
                     <Row className="show-grid no-gutters">
 
                         <Col mdOffset={1} md={7}>

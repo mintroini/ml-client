@@ -18,7 +18,3 @@ ReactDOM.render(
     </Router>,
     document.getElementById('root'));
 registerServiceWorker();
-
-//        <Route path='item/:id' component={ProductDetail} />
-//        <Route path='item/:itemid' component={() => <ProductDetail myProp={"dsa"}/>} />
-//<Route excact path='item' component={Home} />
